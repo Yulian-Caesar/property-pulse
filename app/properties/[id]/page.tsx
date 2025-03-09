@@ -1,8 +1,13 @@
-import React from 'react'
+type PropertyPageProps = {
+	params: {
+		id: string
+	};
+};
 
-const PropertyPage = () => {
+const PropertyPage = ({ params }: PropertyPageProps) => {
+
 	return (
-		<div>Property Page</div>
+		<div>Property Page {params.id}</div>
 	)
 }
 
