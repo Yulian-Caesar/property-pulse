@@ -24,3 +24,9 @@ body {
 	color: var(--foreground);
 	font-family: Poppins, sans-serif;
 }
+
+@media (min-width: 768px) {
+	.md\:grid-cols-70\/30 {
+		grid-template-columns: 70% 28%;
+	}
+}
