@@ -1,5 +1,4 @@
 import { Schema, model, models } from "mongoose";
-import { type } from "os";
 
 const PropertySchema = new Schema({
 	owner: {
