@@ -1,5 +1,5 @@
 import PropertyCard from "@/components/PropertyCard/PropertyCard"
-import { PropertyCardType } from "@/components/PropertyCard/PropertyCard.type";
+//import { PropertyCardType } from "@/components/PropertyCard/PropertyCard.type";
 import connectDB from "@/config/database"
 import Property from "@/models/Property"
 
