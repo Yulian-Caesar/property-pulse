@@ -1,5 +1,4 @@
 import GoogleProvider from "next-auth/providers/google"
-import { signIn } from "next-auth/react"
 
 export const authOptions = {
 	providers: [
