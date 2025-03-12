@@ -1,8 +1,8 @@
-import React from 'react'
+import addProperty from "@/app/actions/addProperty"
 
 const PropertyAddhtmlForm = () => {
 	return (
-		<form>
+		<form action={addProperty}>
 			<h2 className="text-3xl text-center font-semibold mb-6">Add Property</h2>
 			<div className="mb-4">
 				<label htmlFor="type" className="block text-gray-700 font-bold mb-2">
@@ -306,7 +306,7 @@ const PropertyAddhtmlForm = () => {
 				<input
 					type="text"
 					id="seller_name"
-					name="seller_info.name."
+					name="seller_info.name"
 					className="border rounded w-full py-2 px-3"
 					placeholder="Name"
 				/>
