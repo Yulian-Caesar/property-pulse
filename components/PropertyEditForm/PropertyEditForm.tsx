@@ -1,9 +1,12 @@
-import React from 'react'
 import { PropertyCardType } from '../PropertyCard/PropertyCard.type'
+import updateProperty from '@/app/actions/updateProperty'
 
 const PropertyEditForm = ({ property }: { property: PropertyCardType }) => {
+
+	const updatePropertyById = updateProperty.bind(null, property._id)
+
 	return (
-		<form >
+		<form action={updatePropertyById}>
 			<h2 className="text-3xl text-center font-semibold mb-6">Edit Property</h2>
 			<div className="mb-4">
 				<label htmlFor="type" className="block text-gray-700 font-bold mb-2">
