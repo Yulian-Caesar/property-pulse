@@ -12,8 +12,8 @@ type PropertyEditPageProps = {
 
 const PropertyEditPage = async ({ params }: PropertyEditPageProps) => {
 	await connectDB()
-
-	const propertyDoc = await Property.findById(params.id).lean()
+	const { id: paramsId } = await params;
+	const propertyDoc = await Property.findById(paramsId).lean()
 	const property = convertToSerializableObject(propertyDoc)
 
 	if (!property) {
