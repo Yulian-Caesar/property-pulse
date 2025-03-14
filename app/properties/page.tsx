@@ -12,7 +12,8 @@ type PageProps = {
 	};
 };
 
-const PropertiesPage = async ({ searchParams: { page = '1', pageSize = '9' } }: PageProps) => {
+const PropertiesPage = async ({ searchParams }: PageProps) => {
+	const { page = '1', pageSize = '9' } = searchParams || {};
 	await connectDB();
 
 	const skip = (+page - 1) * +pageSize;
