@@ -5,14 +5,14 @@ import connectDB from "@/config/database"
 import Property from "@/models/Property"
 import { convertToSerializableObject } from "@/utils/convertToObject";
 
-//type PropertiesPageProps = {
-//	searchParams: {
-//		page: string,
-//		pageSize: string
-//	}
-//}
+type PageProps = {
+	searchParams: {
+		page?: string;
+		pageSize?: string;
+	};
+};
 
-const PropertiesPage = async ({ searchParams: { page = '1', pageSize = '9' } }) => {
+const PropertiesPage = async ({ searchParams: { page = '1', pageSize = '9' } }: PageProps) => {
 	await connectDB();
 
 	const skip = (+page - 1) * +pageSize;
