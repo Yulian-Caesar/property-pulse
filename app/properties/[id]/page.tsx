@@ -16,6 +16,7 @@ import PropertyContactForm from "@/components/PropertyContactForm/PropertyContac
 //		id: string
 //	};
 //};
+
 // @ts-ignore
 const PropertyPage = async ({ params }) => {
 	await connectDB()

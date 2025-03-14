@@ -10,14 +10,9 @@ import { FaArrowAltCircleLeft } from 'react-icons/fa'
 
 type PropertyQuery = FilterQuery<typeof Property>;
 
-type SearchResultsPageProps = {
-	searchParams: {
-		location: string,
-		propertyType: string
-	}
-}
 
-const SearchResultsPage = async ({ searchParams: { location, propertyType } }: SearchResultsPageProps) => {
+// @ts-ignore
+const SearchResultsPage = async ({ searchParams: { location, propertyType } }) => {
 	await connectDB()
 
 	const locationPattern = new RegExp(location, 'i')
