@@ -4,7 +4,7 @@ import PropertyCard from "@/components/PropertyCard/PropertyCard"
 import connectDB from "@/config/database"
 import Property from "@/models/Property"
 
-
+// @ts-ignore
 const PropertiesPage = async ({ searchParams }) => {
 	const { page = '1', pageSize = '9' } = searchParams || {};
 	await connectDB();

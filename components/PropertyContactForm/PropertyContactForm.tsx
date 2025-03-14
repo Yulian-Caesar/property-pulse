@@ -13,6 +13,7 @@ const PropertyContactForm = ({ property }: { property: PropertyCardType }) => {
 	const [state, formAction] = useActionState(addMessage, {})
 
 	useEffect(() => {
+		// @ts-ignore
 		if (state.error) toast.error(state.error)
 		if (state.submitted) toast.success('Message sent successfully')
 	}, [state])

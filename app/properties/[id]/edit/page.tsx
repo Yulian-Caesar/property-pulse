@@ -9,7 +9,7 @@ import React from 'react'
 //		id: string
 //	};
 //};
-
+// @ts-ignore
 const PropertyEditPage = async ({ params }) => {
 	await connectDB()
 	const { id: paramsId } = params;
