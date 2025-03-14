@@ -64,11 +64,16 @@ const PropertyCard = ({ property }: { property: PropertyCardType }) => {
 					</p>
 				</div>
 
-				<div
-					className="flex justify-center gap-4 text-green-900 text-sm mb-4"
-				>
-					<p><FaMoneyBill className="md:hidden lg:inline" /> Weekly</p>
-					<p><FaMoneyBill className="md:hidden lg:inline" /> Monthly</p>
+				<div className="flex justify-center gap-4 text-green-900 text-sm mb-4" >
+					{rates.nightly && (
+						<p><FaMoneyBill className="md:hidden lg:inline" /> Nightly</p>
+					)}
+					{rates.weekly && (
+						<p><FaMoneyBill className="md:hidden lg:inline" /> Weekly</p>
+					)}
+					{rates.monthly && (
+						<p><FaMoneyBill className="md:hidden lg:inline" /> Monthly</p>
+					)}
 				</div>
 
 				<div className="border border-gray-100 mb-5"></div>
