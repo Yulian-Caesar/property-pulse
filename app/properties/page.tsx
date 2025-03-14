@@ -3,16 +3,9 @@ import PropertyCard from "@/components/PropertyCard/PropertyCard"
 //import { PropertyCardType } from "@/components/PropertyCard/PropertyCard.type";
 import connectDB from "@/config/database"
 import Property from "@/models/Property"
-import { convertToSerializableObject } from "@/utils/convertToObject";
 
-type PageProps = {
-	searchParams: {
-		page?: string;
-		pageSize?: string;
-	};
-};
 
-const PropertiesPage = async ({ searchParams }: PageProps) => {
+const PropertiesPage = async ({ searchParams }) => {
 	const { page = '1', pageSize = '9' } = searchParams || {};
 	await connectDB();
 
