@@ -12,7 +12,8 @@ type PropertyQuery = FilterQuery<typeof Property>;
 
 
 // @ts-ignore
-const SearchResultsPage = async ({ searchParams: { location, propertyType } }) => {
+const SearchResultsPage = async ({ searchParams }) => {
+	const { location, propertyType } = searchParams || {};
 	await connectDB()
 
 	const locationPattern = new RegExp(location, 'i')
