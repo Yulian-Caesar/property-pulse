@@ -4,26 +4,29 @@ import { MessageType } from "./MessageCard.type"
 import markMessageAsRead from "@/app/actions/markMessageAsRead"
 import { toast } from "react-toastify"
 import deleteMessage from "@/app/actions/deleteMessage"
+import { useGlobalContext } from "@/context/GlobalContext"
 
 const MessageCard = ({ message }: { message: MessageType }) => {
 	const [isRead, setIsRead] = useState(message.read)
 	const [isMounted, setIsMounted] = useState(false)
-
-	useEffect(() => {
-		setIsMounted(true)
-	}, [])
-
+	const { setUnreadCount } = useGlobalContext()
 
 	const handleReadClick = async () => {
 		const read = await markMessageAsRead(message._id)
 		setIsRead(read)
+		setUnreadCount((prevCount) => (read ? prevCount - 1 : prevCount + 1))
 		toast.success(`Mark As ${read ? 'Read' : 'New'}`)
 	}
 
 	const handleDeleteClick = async () => {
 		await deleteMessage(message._id)
+		setUnreadCount((prevCount) => (isRead ? prevCount : prevCount - 1));
 		toast.success('Message deleted succesfully')
 	}
+
+	useEffect(() => {
+		setIsMounted(true)
+	}, [])
 
 	if (!isMounted) {
 		return null

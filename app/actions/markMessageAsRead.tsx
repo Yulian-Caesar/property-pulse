@@ -19,9 +19,9 @@ async function markMessageAsRead(messageId: string) {
 	if (!message) throw new Error("Message not found")
 
 	// Verify ownership
-	if (message.recipient.toString() === userId) {
-		throw new Error("Unauthrozied")
-	}
+	//if (message.recipient.toString() === userId) {
+	//	throw new Error("Unauthrozied")
+	//}
 
 	message.read = !message.read
 
