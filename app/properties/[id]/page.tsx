@@ -11,15 +11,15 @@ import ShareButtons from "@/components/ShareButtons/ShareButtons";
 import PropertyContactForm from "@/components/PropertyContactForm/PropertyContactForm";
 
 
-type PropertyPageProps = {
-	params: {
-		id: string
-	};
-};
+//type PropertyPageProps = {
+//	params: {
+//		id: string
+//	};
+//};
 
-const PropertyPage = async ({ params }: PropertyPageProps) => {
+const PropertyPage = async ({ params }) => {
 	await connectDB()
-	const { id: paramsId } = await params;
+	const { id: paramsId } = params;
 	const propertyDoc = await Property.findById(paramsId).lean();
 	const property = convertToSerializableObject(propertyDoc)
 
