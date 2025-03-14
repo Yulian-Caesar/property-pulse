@@ -1,6 +1,4 @@
-import { PropertyCardType } from "@/components/PropertyCard/PropertyCard.type";
-
-export function convertToSerializableObject(leanDocument) {
+export function convertToSerializableObject(leanDocument: Record<string, any>) {
 	for (const key of Object.keys(leanDocument)) {
 		if (leanDocument[key].toJSON && leanDocument[key].toString) {
 			leanDocument[key] = leanDocument[key].toString()
