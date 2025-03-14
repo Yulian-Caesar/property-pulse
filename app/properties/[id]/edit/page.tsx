@@ -4,13 +4,13 @@ import Property from '@/models/Property';
 import { convertToSerializableObject } from '@/utils/convertToObject';
 import React from 'react'
 
-type PropertyEditPageProps = {
-	params: {
-		id: string
-	};
-};
+//type PropertyEditPageProps = {
+//	params: {
+//		id: string
+//	};
+//};
 
-const PropertyEditPage = async ({ params }: PropertyEditPageProps) => {
+const PropertyEditPage = async ({ params }) => {
 	await connectDB()
 	const { id: paramsId } = params;
 	const propertyDoc = await Property.findById(paramsId).lean()
